@@ -1,0 +1,19 @@
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\obj\Debug\net6.0-windows\Hogwarts Project.csproj.AssemblyReference.cache
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\obj\Debug\net6.0-windows\Hogwarts_Project.Form1.resources
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\obj\Debug\net6.0-windows\Hogwarts Project.csproj.GenerateResource.cache
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\obj\Debug\net6.0-windows\Hogwarts Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\obj\Debug\net6.0-windows\Hogwarts Project.AssemblyInfoInputs.cache
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\obj\Debug\net6.0-windows\Hogwarts Project.AssemblyInfo.cs
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\obj\Debug\net6.0-windows\Hogwarts Project.csproj.CoreCompileInputs.cache
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\bin\Debug\net6.0-windows\Hogwarts Project.exe
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\bin\Debug\net6.0-windows\Hogwarts Project.deps.json
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\bin\Debug\net6.0-windows\Hogwarts Project.runtimeconfig.json
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\bin\Debug\net6.0-windows\Hogwarts Project.dll
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\bin\Debug\net6.0-windows\Hogwarts Project.pdb
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\obj\Debug\net6.0-windows\Hogwarts Project.csproj.CopyComplete
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\obj\Debug\net6.0-windows\Hogwarts Project.dll
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\obj\Debug\net6.0-windows\refint\Hogwarts Project.dll
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\obj\Debug\net6.0-windows\Hogwarts Project.pdb
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\obj\Debug\net6.0-windows\Hogwarts Project.genruntimeconfig.cache
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\obj\Debug\net6.0-windows\ref\Hogwarts Project.dll

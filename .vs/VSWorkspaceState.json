@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Files",
-    "\\Files\\Hogwarts Project"
+    "\\Files\\Hogwarts Project",
+    "\\Files\\Hogwarts Project\\Hogwarts Project"
   ],
-  "SelectedNode": "\\Files\\JSON_DATA.json",
+  "SelectedNode": "\\Files\\Hogwarts Project\\Hogwarts Project\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }

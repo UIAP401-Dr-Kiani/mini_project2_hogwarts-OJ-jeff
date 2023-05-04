@@ -12,8 +12,7 @@ namespace Hogwarts_Project
         public string Curriculum { get; set; }
         public PetType Pet { get; set; }
         public GroupType Group { get; set; }
-        public bool HasLuggage { get; set; }
-        public RoleType Role { get; set; }
+        public bool HasLuggage { get; set; } 
         public List<string> ReceivedLetters { get; set; }
 
         public enum PetType
@@ -33,11 +32,6 @@ namespace Hogwarts_Project
             None
         }
 
-        public enum RoleType
-        {
-            Teacher,
-            Student,
-            None
-        }
+        
     }
 }
