@@ -6,7 +6,38 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_Project
 {
-    internal class People
+    public class People:Human
     {
+        public int RoomNumber { get; set; }
+        public string Curriculum { get; set; }
+        public PetType Pet { get; set; }
+        public GroupType Group { get; set; }
+        public bool HasLuggage { get; set; }
+        public RoleType Role { get; set; }
+        public List<string> ReceivedLetters { get; set; }
+
+        public enum PetType
+        {
+            None,
+            Cat,
+            Rat,
+            Owl
+        }
+
+        public enum GroupType
+        {
+            Gryffindor,
+            Hufflepuff,
+            Ravenclaw,
+            Slytherin,
+            None
+        }
+
+        public enum RoleType
+        {
+            Teacher,
+            Student,
+            None
+        }
     }
 }

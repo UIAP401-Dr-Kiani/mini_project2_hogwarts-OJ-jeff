@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Amir\\source\\repos\\mini_project2_hogwarts-OJ-jeff\\Files\\Hogwarts Project\\Hogwarts Project\\Hogwarts Project.csproj": {}
+    "C:\\Users\\Amir\\Source\\Repos\\mini_project2_hogwarts-OJ-jeff\\Files\\Hogwarts Project\\Hogwarts Project\\Hogwarts Project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Amir\\source\\repos\\mini_project2_hogwarts-OJ-jeff\\Files\\Hogwarts Project\\Hogwarts Project\\Hogwarts Project.csproj": {
+    "C:\\Users\\Amir\\Source\\Repos\\mini_project2_hogwarts-OJ-jeff\\Files\\Hogwarts Project\\Hogwarts Project\\Hogwarts Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Amir\\source\\repos\\mini_project2_hogwarts-OJ-jeff\\Files\\Hogwarts Project\\Hogwarts Project\\Hogwarts Project.csproj",
+        "projectUniqueName": "C:\\Users\\Amir\\Source\\Repos\\mini_project2_hogwarts-OJ-jeff\\Files\\Hogwarts Project\\Hogwarts Project\\Hogwarts Project.csproj",
         "projectName": "Hogwarts Project",
-        "projectPath": "C:\\Users\\Amir\\source\\repos\\mini_project2_hogwarts-OJ-jeff\\Files\\Hogwarts Project\\Hogwarts Project\\Hogwarts Project.csproj",
+        "projectPath": "C:\\Users\\Amir\\Source\\Repos\\mini_project2_hogwarts-OJ-jeff\\Files\\Hogwarts Project\\Hogwarts Project\\Hogwarts Project.csproj",
         "packagesPath": "C:\\Users\\Amir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Amir\\source\\repos\\mini_project2_hogwarts-OJ-jeff\\Files\\Hogwarts Project\\Hogwarts Project\\obj\\",
+        "outputPath": "C:\\Users\\Amir\\Source\\Repos\\mini_project2_hogwarts-OJ-jeff\\Files\\Hogwarts Project\\Hogwarts Project\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
