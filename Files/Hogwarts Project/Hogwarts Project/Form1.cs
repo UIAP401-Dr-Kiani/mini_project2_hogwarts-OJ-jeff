@@ -6,7 +6,6 @@ namespace Hogwarts_Project
     {
         Human[] Humans = new Human[400];
         Jsonarray[] test = new Jsonarray[300];
-
         string Jsonstring = File.ReadAllText("C:\\Users\\Amir\\source\\repos\\mini_project2_hogwarts-OJ-jeff\\Files\\JSON_DATA.json");
         void PeopleSort()
         {
@@ -152,7 +151,7 @@ namespace Hogwarts_Project
         {
             try
             {
-                throw new NotImplementedException();
+                throw new Exception();
             }
             catch (Exception)
             {
