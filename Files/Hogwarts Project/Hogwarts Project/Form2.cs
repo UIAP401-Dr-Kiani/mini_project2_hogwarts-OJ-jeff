@@ -14,6 +14,7 @@ namespace Hogwarts_Project
 
     public partial class Form2 : Form
     {
+        Dumbeldore admin =  Dumbeldore.Instance;
         Students[] Student = new Students[400];
         Jsonarray[] test = new Jsonarray[300];
         string Jsonstring = File.ReadAllText("C:\\Users\\Amir\\source\\repos\\mini_project2_hogwarts-OJ-jeff\\Files\\JSON_DATA.json");
@@ -27,7 +28,7 @@ namespace Hogwarts_Project
             int j = 0;
             for (int i = 0; i < test.Length; ++i)
             {
-                
+
                 if (test[i].role == "student")
                 {
                     Student[j].FirstName = test[i].name;
@@ -91,7 +92,7 @@ namespace Hogwarts_Project
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
 
@@ -99,7 +100,7 @@ namespace Hogwarts_Project
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(admin.TicketTime.ToString());
 
 
         }
@@ -107,7 +108,14 @@ namespace Hogwarts_Project
         private void button1_Click(object sender, EventArgs e)
         {
             int a = StudentFinder();
-            MessageBox.Show(a.ToString());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+          //  if(textBox1.Text ==admin.MassageReceiver)
+          //  {
+                MessageBox.Show(admin.Message);
+            //}
         }
     }
 }

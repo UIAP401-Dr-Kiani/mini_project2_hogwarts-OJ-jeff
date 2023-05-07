@@ -103,8 +103,8 @@ namespace Hogwarts_Project
                     MessageBox.Show("Welcome Student!");
                     this.Hide();
                     var form2 = new Form2();
-                    form2.Closed += (s, args) => this.Close();
-                    form2.Show();
+                    form2.ShowDialog();
+                    this.Show();
                 }
                 else if (Check == 2)
                 {
@@ -112,16 +112,16 @@ namespace Hogwarts_Project
                     MessageBox.Show("Welcome Teacher!");
                     this.Hide();
                     var form3 = new Form3();
-                    form3.Closed += (s, args) => this.Close();
-                    form3.Show();
+                    form3.ShowDialog();
+                    this.Show();
                 }
                 else if (Check == 3)
                 {
                     MessageBox.Show("Welcome Dumbeldore!");
                     this.Hide();
                     var form4 = new Form4();
-                    form4.Closed += (s, args) => this.Close();
-                    form4.Show();
+                    form4.ShowDialog();
+                    this.Show();
                 }
                 else
                 {
