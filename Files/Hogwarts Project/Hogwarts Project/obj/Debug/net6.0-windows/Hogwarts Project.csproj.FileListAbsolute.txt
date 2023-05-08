@@ -21,3 +21,4 @@ C:\Users\Amir\source\repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project
 C:\Users\Amir\source\repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\obj\Debug\net6.0-windows\Hogwarts_Project.Form2.resources
 C:\Users\Amir\source\repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\obj\Debug\net6.0-windows\Hogwarts_Project.Form3.resources
 C:\Users\Amir\source\repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\obj\Debug\net6.0-windows\Hogwarts_Project.Form4.resources
+C:\Users\Amir\Source\Repos\mini_project2_hogwarts-OJ-jeff\Files\Hogwarts Project\Hogwarts Project\obj\Debug\net6.0-windows\Hogwarts_Project.Form5.resources

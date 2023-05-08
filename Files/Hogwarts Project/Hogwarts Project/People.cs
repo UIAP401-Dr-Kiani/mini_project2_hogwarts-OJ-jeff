@@ -23,14 +23,7 @@ namespace Hogwarts_Project
             Owl
         }
 
-        public enum GroupType
-        {
-            Gryffindor,
-            Hufflepuff,
-            Ravenclaw,
-            Slytherin,
-            None
-        }
+
 
         
     }

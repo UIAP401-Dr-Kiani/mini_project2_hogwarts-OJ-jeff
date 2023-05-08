@@ -4,49 +4,7 @@ namespace Hogwarts_Project
 {
     public partial class Form1 : Form
     {
-        Human[] Humans = new Human[400];
-        Jsonarray[] test = new Jsonarray[300];
-        string Jsonstring = File.ReadAllText("C:\\Users\\Amir\\source\\repos\\mini_project2_hogwarts-OJ-jeff\\Files\\JSON_DATA.json");
-        void PeopleSort()
-        {
-            for (int i = 0; i < Humans.Length; i++)
-            {
-                Humans[i] = new Human();
-            }
-            test = JsonConvert.DeserializeObject<Jsonarray[]>(Jsonstring);
-            for (int i = 0; i < test.Length; ++i)
-            {
-                Humans[i].FirstName = test[i].name;
-                Humans[i].LastName = test[i].family;
-                Humans[i].BirthDate = test[i].dateOfBirth;
-                Humans[i].Gender = test[i].gender;
-                Humans[i].Father = test[i].father;
-                Humans[i].Username = test[i].username;
-                Humans[i].Password = test[i].password;
-                if (test[i].type == "Pure blood")
-                {
-                    Humans[i].TypeOfBlood = Human.BloodType.PureBlood;
-                }
-                else if (test[i].type == "Half blood")
-                {
-                    Humans[i].TypeOfBlood = Human.BloodType.HalfBlood;
-                }
-                else if (test[i].type == "Muggle blood")
-                {
-                    Humans[i].TypeOfBlood = Human.BloodType.MuggleBlood;
-                }
-                if (test[i].role == "teacher")
-                {
-                    Humans[i].Role = Human.RoleType.Teacher;
-                }
-                else if (test[i].role == "student")
-                {
-                    Humans[i].Role = Human.RoleType.Student;
-                }
-
-
-            }
-        }
+       Globals globals=Globals.Instance;
 
         public Form1()
         {
@@ -55,7 +13,8 @@ namespace Hogwarts_Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            globals.StudentSort();
+            globals.Student[0].HasLuggage = true;
 
 
         }
@@ -72,14 +31,14 @@ namespace Hogwarts_Project
         }
         int SignIn()
         {
-            PeopleSort();
-            for (int i = 0; i < Humans.Length; ++i)
+            globals.PeopleSort();
+            for (int i = 0; i < globals.Humans.Length; ++i)
             {
-                if (textBox1.Text == Humans[i].Username && textBox2.Text == Humans[i].Password && Humans[i].Role == Human.RoleType.Student)
+                if (textBox1.Text == globals.Humans[i].Username && textBox2.Text == globals.Humans[i].Password && globals.Humans[i].Role == Human.RoleType.Student)
                 {
                     return 1;
                 }
-                else if (textBox1.Text == Humans[i].Username && textBox2.Text == Humans[i].Password && Humans[i].Role == Human.RoleType.Teacher)
+                else if (textBox1.Text == globals.Humans[i].Username && textBox2.Text == globals.Humans[i].Password && globals.Humans[i].Role == Human.RoleType.Teacher)
                 {
                     return 2;
                 }
@@ -103,6 +62,7 @@ namespace Hogwarts_Project
                     MessageBox.Show("Welcome Student!");
                     this.Hide();
                     var form2 = new Form2();
+                    form2.Label1Text(textBox1.Text);
                     form2.ShowDialog();
                     this.Show();
                 }
@@ -156,7 +116,7 @@ namespace Hogwarts_Project
             catch (Exception)
             {
                 textBox3.Text = "WELCOME TO HOGWARTS SIMULATOR";
-                MessageBox.Show("ERORR!!!");
+                MessageBox.Show("ERORR!!!","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
                 
