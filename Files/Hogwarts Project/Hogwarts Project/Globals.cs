@@ -21,6 +21,10 @@ namespace Hogwarts_Project
         
         public Jsonarray[] test = new Jsonarray[300];
         public string Jsonstring = File.ReadAllText("C:\\Users\\Amir\\source\\repos\\mini_project2_hogwarts-OJ-jeff\\Files\\JSON_DATA.json");
+        public Dormitory[] GryffindorDorm = new Dormitory[60];
+        public Dormitory[] HufflepuffDorm = new Dormitory[60];
+        public Dormitory[] RavenclawDorm = new Dormitory[60];
+        public Dormitory[] SlytherinDorm = new Dormitory[60];
         public void PeopleSort()
         {
             for (int i = 0; i < Humans.Length; i++)

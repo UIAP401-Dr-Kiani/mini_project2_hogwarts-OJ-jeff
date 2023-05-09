@@ -5,7 +5,19 @@ namespace Hogwarts_Project
     public partial class Form1 : Form
     {
        Globals globals=Globals.Instance;
-
+        int IndexFinder()
+        {
+            //globals.StudentSort();
+            int i = 0;
+            for (i = 0; i < globals.Student.Length; i++)
+            {
+                if (globals.Student[i].Username ==textBox1.Text)
+                {
+                    break;
+                }
+            }
+            return i;
+        }
         public Form1()
         {
             InitializeComponent();
@@ -55,16 +67,30 @@ namespace Hogwarts_Project
         {
             try
             {
+                int Index = IndexFinder();
                 int Check = SignIn();
 
                 if (Check == 1)
                 {
-                    MessageBox.Show("Welcome Student!");
-                    this.Hide();
-                    var form2 = new Form2();
-                    form2.Label1Text(textBox1.Text);
-                    form2.ShowDialog();
-                    this.Show();
+                    if (globals.Student[Index].IsInHogwarts)
+                    {
+                        MessageBox.Show("Welcome to hogwarts Student!");
+                        this.Hide();
+                        var form5 = new Form5();
+                        form5.Label1Text(textBox1.Text);
+                        form5.ShowDialog();
+                        this.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Welcome Student!");
+                        this.Hide();
+                        var form2 = new Form2();
+                        form2.Label1Text(textBox1.Text);
+                        form2.ShowDialog();
+                        this.Show();
+                    }
+                   
                 }
                 else if (Check == 2)
                 {

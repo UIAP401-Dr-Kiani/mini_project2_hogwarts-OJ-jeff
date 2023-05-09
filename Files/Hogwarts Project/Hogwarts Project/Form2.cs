@@ -57,8 +57,8 @@ namespace Hogwarts_Project
 
         private void label2_Click(object sender, EventArgs e)
         {
-            
-            label2.Text=globals.Student[0].HasLuggage.ToString();
+
+            label2.Text = globals.Student[0].HasLuggage.ToString();
 
         }
 
@@ -78,13 +78,17 @@ namespace Hogwarts_Project
             TimeSpan timeSpan = admin.TicketTime - Now;
             if (timeSpan.TotalSeconds > 0)
             {
-                MessageBox.Show("Welcome To HOGWARTS!");
-                this.Close();
-                var form5 = new Form5();
-                form5.Label1Text(label1.Text);
-                form5.ShowDialog();
+                int Index = IndexFinder();
+                globals.Student[Index].IsInHogwarts = true;
+                MessageBox.Show("Welcome to Hogwarts,Please sign in again to enter hogwarts.");
+                this.DialogResult = DialogResult.OK;
 
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

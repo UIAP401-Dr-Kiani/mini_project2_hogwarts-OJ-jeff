@@ -11,6 +11,7 @@ namespace Hogwarts_Project
         public List<string> PassedCourses { get; set; }
         public int Term { get; set; }
         public int DormitoryNumber { get; set; }
-        public bool HasLuggage { get; set; }
+        public bool IsInHogwarts { get; set; }
+        
     }
 }

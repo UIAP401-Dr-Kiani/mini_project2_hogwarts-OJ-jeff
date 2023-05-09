@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_Project
 {
-    internal class Groups
+
+
+
+    public class Group
     {
+        public GroupType Type { get; set; }
+        public int Score { get; set; }
+        public List<People> Members { get; set; }
+        public List<People> QuidditchPlayers { get; set; }
+
     }
 }
+ 

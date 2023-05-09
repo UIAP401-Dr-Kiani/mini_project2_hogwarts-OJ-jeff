@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_Project
 {
-    internal class GroupTypeEnum
+    public enum GroupType
     {
+        Gryffindor,
+        Hufflepuff,
+        Ravenclaw,
+        Slytherin,
+        None
     }
 }

@@ -36,6 +36,7 @@
             checkBox2 = new CheckBox();
             checkBox3 = new CheckBox();
             checkBox4 = new CheckBox();
+            label5 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -51,7 +52,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(0, 17);
+            label2.Location = new Point(0, 30);
             label2.Name = "label2";
             label2.Size = new Size(183, 20);
             label2.TabIndex = 3;
@@ -61,41 +62,44 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(713, 9);
+            label3.Location = new Point(346, -1);
             label3.Name = "label3";
-            label3.Size = new Size(50, 20);
+            label3.Size = new Size(71, 20);
             label3.TabIndex = 4;
-            label3.Text = "label3";
+            label3.Text = "Welcome";
             label3.Click += label3_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(713, 45);
+            label4.Location = new Point(693, -1);
             label4.Name = "label4";
             label4.Size = new Size(50, 20);
             label4.TabIndex = 5;
-            label4.Text = "label4";
+            label4.Text = "Group";
+            label4.Click += label4_Click;
             // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
             checkBox1.Location = new Point(8, 53);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(101, 24);
+            checkBox1.Size = new Size(293, 24);
             checkBox1.TabIndex = 6;
-            checkBox1.Text = "checkBox1";
+            checkBox1.Text = "Go to dining hall to find out your group";
             checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // checkBox2
             // 
             checkBox2.AutoSize = true;
             checkBox2.Location = new Point(8, 83);
             checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(101, 24);
+            checkBox2.Size = new Size(258, 24);
             checkBox2.TabIndex = 7;
-            checkBox2.Text = "checkBox2";
+            checkBox2.Text = "Find out your dormitory room info";
             checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
             // 
             // checkBox3
             // 
@@ -117,11 +121,22 @@
             checkBox4.Text = "checkBox4";
             checkBox4.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(693, 19);
+            label5.Name = "label5";
+            label5.Size = new Size(86, 20);
+            label5.TabIndex = 10;
+            label5.Text = "Dorm Code";
+            label5.Click += label5_Click;
+            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label5);
             Controls.Add(checkBox4);
             Controls.Add(checkBox3);
             Controls.Add(checkBox2);
@@ -146,5 +161,6 @@
         private CheckBox checkBox2;
         private CheckBox checkBox3;
         private CheckBox checkBox4;
+        private Label label5;
     }
 }
