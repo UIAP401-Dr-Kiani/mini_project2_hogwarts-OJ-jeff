@@ -13,6 +13,7 @@ namespace Hogwarts_Project
         {
             PeopleSort();
             StudentSort();
+            DormFix();
         }
         private static Globals instance = null;
         private static readonly object padlock = new object();
@@ -25,6 +26,16 @@ namespace Hogwarts_Project
         public Dormitory[] HufflepuffDorm = new Dormitory[60];
         public Dormitory[] RavenclawDorm = new Dormitory[60];
         public Dormitory[] SlytherinDorm = new Dormitory[60];
+        public void DormFix()
+        {
+            for (int i = 0; i < 60; i++)
+            {
+                GryffindorDorm[i]=new Dormitory();
+                HufflepuffDorm[i]=new Dormitory();
+                RavenclawDorm[i]=new Dormitory();
+                SlytherinDorm[i]=new Dormitory();
+            }
+        }
         public void PeopleSort()
         {
             for (int i = 0; i < Humans.Length; i++)
