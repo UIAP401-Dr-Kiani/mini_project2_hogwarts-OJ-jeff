@@ -13,13 +13,14 @@ namespace Hogwarts_Project
         {
             PeopleSort();
             StudentSort();
+            TeacherSort(); 
             DormFix();
         }
         private static Globals instance = null;
         private static readonly object padlock = new object();
         public Human[] Humans = new Human[400];
         public Students[] Student = new Students[400];
-        
+        public Teachers[] Teachers = new Teachers[400]; 
         public Jsonarray[] test = new Jsonarray[300];
         public string Jsonstring = File.ReadAllText("C:\\Users\\Amir\\source\\repos\\mini_project2_hogwarts-OJ-jeff\\Files\\JSON_DATA.json");
         public Dormitory[] GryffindorDorm = new Dormitory[60];
@@ -106,6 +107,45 @@ namespace Hogwarts_Project
                     else if (test[i].type == "Muggle blood")
                     {
                         Student[j].TypeOfBlood = Human.BloodType.MuggleBlood;
+                    }
+                    j++;
+
+
+                }
+            }
+        }
+        public void TeacherSort()
+        {
+            for (int i = 0; i < Teachers.Length; i++)
+            {
+                Teachers[i] = new Teachers();
+            }
+            test = JsonConvert.DeserializeObject<Jsonarray[]>(Jsonstring);
+            int j = 0;
+            for (int i = 0; i < test.Length; ++i)
+            {
+
+                if (test[i].role == "teacher")
+                {
+                    Teachers[j].FirstName = test[i].name;
+                    Teachers[j].LastName = test[i].family;
+                    Teachers[j].BirthDate = test[i].dateOfBirth;
+                    Teachers[j].Gender = test[i].gender;
+                    Teachers[j].Father = test[i].father;
+                    Teachers[j].Username = test[i].username;
+                    Teachers[j].Password = test[i].password;
+                    Teachers[j].Role = Human.RoleType.Teacher;
+                    if (test[i].type == "Pure blood")
+                    {
+                        Teachers[j].TypeOfBlood = Human.BloodType.PureBlood;
+                    }
+                    else if (test[i].type == "Half blood")
+                    {
+                        Teachers[j].TypeOfBlood = Human.BloodType.HalfBlood;
+                    }
+                    else if (test[i].type == "Muggle blood")
+                    {
+                        Teachers[j].TypeOfBlood = Human.BloodType.MuggleBlood;
                     }
                     j++;
 

@@ -37,6 +37,7 @@
             checkBox3 = new CheckBox();
             checkBox4 = new CheckBox();
             label5 = new Label();
+            comboBox1 = new ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -131,11 +132,20 @@
             label5.Text = "Dorm Code";
             label5.Click += label5_Click;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(346, 193);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 12;
+            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(855, 450);
+            Controls.Add(comboBox1);
             Controls.Add(label5);
             Controls.Add(checkBox4);
             Controls.Add(checkBox3);
@@ -162,5 +172,6 @@
         private CheckBox checkBox3;
         private CheckBox checkBox4;
         private Label label5;
+        private ComboBox comboBox1;
     }
 }

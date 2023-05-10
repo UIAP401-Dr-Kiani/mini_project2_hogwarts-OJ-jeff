@@ -116,7 +116,7 @@ namespace Hogwarts_Project
             }
             catch (Exception)
             {
-                MessageBox.Show("ERORR!!!");
+                MessageBox.Show("ERORR!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 

@@ -26,5 +26,10 @@ namespace Hogwarts_Project
         {
 
         }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
