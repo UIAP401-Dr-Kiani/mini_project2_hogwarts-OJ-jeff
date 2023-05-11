@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_Project
 {
-    internal class Courses
+    public class Courses
     {
+        public string Name { get; set; }
+        public string Term { get; set; }
+        public int Capacity { get; set; }
+        public int NumberOfStudents { get; set; }
+        public string Time { get; set; }
     }
 }

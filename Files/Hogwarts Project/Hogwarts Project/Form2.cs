@@ -80,6 +80,7 @@ namespace Hogwarts_Project
             {
                 int Index = IndexFinder();
                 globals.Student[Index].IsInHogwarts = true;
+                globals.Student[Index].Term++;
                 MessageBox.Show("Welcome to Hogwarts,Please sign in again to enter hogwarts.");
                 this.DialogResult = DialogResult.OK;
 

@@ -47,7 +47,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(367, 9);
+            label2.Location = new Point(162, 9);
             label2.Name = "label2";
             label2.Size = new Size(71, 20);
             label2.TabIndex = 2;
@@ -56,7 +56,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(297, 409);
+            button2.Location = new Point(79, 67);
             button2.Name = "button2";
             button2.Size = new Size(243, 29);
             button2.TabIndex = 4;
@@ -66,9 +66,9 @@
             // 
             // button3
             // 
-            button3.Location = new Point(12, 409);
+            button3.Location = new Point(162, 32);
             button3.Name = "button3";
-            button3.Size = new Size(94, 29);
+            button3.Size = new Size(71, 29);
             button3.TabIndex = 5;
             button3.Text = "Inbox";
             button3.UseVisualStyleBackColor = true;
@@ -78,7 +78,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(395, 117);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(label2);

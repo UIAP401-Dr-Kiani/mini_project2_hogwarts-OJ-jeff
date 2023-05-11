@@ -56,6 +56,7 @@ namespace Hogwarts_Project
         {
             int Index = IndexFinder();
             label3.Text = $"Welcome {globals.Student[Index].FirstName} {globals.Student[Index].LastName}";
+            label6.Text = $"Term: {globals.Student[Index].Term.ToString()}";
 
         }
 
@@ -243,6 +244,11 @@ namespace Hogwarts_Project
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

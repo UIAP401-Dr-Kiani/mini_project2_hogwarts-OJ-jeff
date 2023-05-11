@@ -38,6 +38,7 @@
             checkBox4 = new CheckBox();
             label5 = new Label();
             comboBox1 = new ComboBox();
+            label6 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -115,7 +116,7 @@
             // checkBox4
             // 
             checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(8, 143);
+            checkBox4.Location = new Point(8, 186);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(101, 24);
             checkBox4.TabIndex = 9;
@@ -135,16 +136,27 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(346, 193);
+            comboBox1.Location = new Point(8, 143);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(151, 28);
             comboBox1.TabIndex = 12;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(693, 39);
+            label6.Name = "label6";
+            label6.Size = new Size(42, 20);
+            label6.TabIndex = 13;
+            label6.Text = "Term";
+            label6.Click += label6_Click;
             // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(855, 450);
+            Controls.Add(label6);
             Controls.Add(comboBox1);
             Controls.Add(label5);
             Controls.Add(checkBox4);
@@ -173,5 +185,6 @@
         private CheckBox checkBox4;
         private Label label5;
         private ComboBox comboBox1;
+        private Label label6;
     }
 }
