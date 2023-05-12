@@ -39,6 +39,9 @@
             label5 = new Label();
             comboBox1 = new ComboBox();
             label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -116,7 +119,7 @@
             // checkBox4
             // 
             checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(8, 186);
+            checkBox4.Location = new Point(8, 207);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(101, 24);
             checkBox4.TabIndex = 9;
@@ -136,10 +139,11 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(8, 143);
+            comboBox1.Location = new Point(112, 143);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
+            comboBox1.Size = new Size(667, 28);
             comboBox1.TabIndex = 12;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label6
             // 
@@ -151,11 +155,41 @@
             label6.Text = "Term";
             label6.Click += label6_Click;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(8, 146);
+            label7.Name = "label7";
+            label7.Size = new Size(86, 20);
+            label7.TabIndex = 14;
+            label7.Text = "Select Units";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(8, 174);
+            label8.Name = "label8";
+            label8.Size = new Size(307, 20);
+            label8.TabIndex = 15;
+            label8.Text = "Note that you can select maximum of 4 units.";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(785, 143);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 31);
+            button1.TabIndex = 16;
+            button1.Text = "Submit";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(855, 450);
+            ClientSize = new Size(880, 450);
+            Controls.Add(button1);
+            Controls.Add(label8);
+            Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(comboBox1);
             Controls.Add(label5);
@@ -186,5 +220,8 @@
         private Label label5;
         private ComboBox comboBox1;
         private Label label6;
+        private Label label7;
+        private Label label8;
+        private Button button1;
     }
 }

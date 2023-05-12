@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_Project
 {
-    internal class Occultism
+    public class Occultism:Courses
     {
+        public List<string> Spells { get; set; }
     }
 }

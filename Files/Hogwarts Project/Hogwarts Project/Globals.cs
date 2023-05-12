@@ -14,7 +14,9 @@ namespace Hogwarts_Project
             PeopleSort();
             StudentSort();
             TeacherSort(); 
-            DormFix(); 
+            DormFix();
+            Courses = new List<Courses>();
+            SetCourses();
         }
         private static Globals instance = null;
         private static readonly object padlock = new object();
@@ -27,14 +29,48 @@ namespace Hogwarts_Project
         public Dormitory[] HufflepuffDorm = new Dormitory[60];
         public Dormitory[] RavenclawDorm = new Dormitory[60];
         public Dormitory[] SlytherinDorm = new Dormitory[60];
-        public Courses[] Courses = new Courses[20];
+        public List<Courses> Courses { get; set; }
         public void SetCourses()
         {
-            for (int i = 0; i < Courses.Length; i++)
-            {
-                Courses[i] = new Courses();
-            }
+            
+            Courses.Add(new Botanical() { Name = "Botanical1", Capacity = 10, Term = 1, Time = "Monday,8:00" });
+            Courses.Add(new Botanical() { Name = "Botanical1", Capacity = 10, Term = 1, Time = "Monday,10:00" });
+            Courses.Add(new Botanical() { Name = "Botanical1", Capacity = 10, Term = 1, Time = "Tuesday,10:00" });
+            Courses.Add(new Botanical() { Name = "Botanical1", Capacity = 10, Term = 1, Time = "Sunday,8:00" });
+            Courses.Add(new Botanical() { Name = "Botanical2", Capacity = 10, Term = 2, Time = "Monday,8:00" });
+            Courses.Add(new Botanical() { Name = "Botanical2", Capacity = 10, Term = 2, Time = "Friday,12:00" });
+            Courses.Add(new Botanical() { Name = "Botanical2", Capacity = 10, Term = 2, Time = "Monday,8:00" });
+            Courses.Add(new Botanical() { Name = "Botanical3", Capacity = 10, Term = 3, Time = "Monday,8:00" });
+            Courses.Add(new Botanical() { Name = "Botanical3", Capacity = 10, Term = 3, Time = "Thursday,10:00" });
+            Courses.Add(new Botanical() { Name = "Botanical4", Capacity = 10, Term = 4, Time = "Monday,8:00" });
+            Courses.Add(new Sports() { Name = "Volleyball", Capacity = 12, Term = 1, Time = "Saturday,8:00" , Type= "Volleyball" });
+            Courses.Add(new Sports() { Name = "Basketball", Capacity = 10, Term = 2, Time = "Friday,10:00", Type = "Basketball" });
+            Courses.Add(new Sports() { Name = "Football", Capacity = 22, Term = 3, Time = "Monday,12:00" , Type = "Football" });
+            Courses.Add(new Sports() { Name = "Tabletennis", Capacity = 2, Term = 4, Time = "Thursday,8:00" , Type = "Tabletennis" });
+            Courses.Add(new Chemistry() { Name = "Chemistry1", Capacity = 10, Term = 1, Time = "Tuesday,8:00" });
+            Courses.Add(new Chemistry() { Name = "Chemistry1", Capacity = 10, Term = 1, Time = "Monday,10:00" });
+            Courses.Add(new Chemistry() { Name = "Chemistry1", Capacity = 10, Term = 1, Time = "Tuesday,10:00" });
+            Courses.Add(new Chemistry() { Name = "Chemistry1", Capacity = 10, Term = 1, Time = "Wednesday,8:00" });
+            Courses.Add(new Chemistry() { Name = "Chemistry2", Capacity = 10, Term = 2, Time = "Monday,8:00" });
+            Courses.Add(new Chemistry() { Name = "Chemistry2", Capacity = 10, Term = 2, Time = "Sunday,12:00" });
+            Courses.Add(new Chemistry() { Name = "Chemistry2", Capacity = 10, Term = 2, Time = "Monday,8:00" });
+            Courses.Add(new Chemistry() { Name = "Chemistry3", Capacity = 10, Term = 3, Time = "Wednesday,12:00" });
+            Courses.Add(new Chemistry() { Name = "Chemistry3", Capacity = 10, Term = 3, Time = "Thursday,10:00" });
+            Courses.Add(new Chemistry() { Name = "Chemistry4", Capacity = 10, Term = 4, Time = "Saturday,8:00" });
+            Courses.Add(new Occultism() { Name = "Occultism1", Capacity = 10, Term = 1, Time = "Saturday,8:00" });
+            Courses.Add(new Occultism() { Name = "Occultism1", Capacity = 10, Term = 1, Time = "Monday,10:00" });
+            Courses.Add(new Occultism() { Name = "Occultism1", Capacity = 10, Term = 1, Time = "Tuesday,10:00" });
+            Courses.Add(new Occultism() { Name = "Occultism1", Capacity = 10, Term = 1, Time = "Monday,12:00" });
+            Courses.Add(new Occultism() { Name = "Occultism2", Capacity = 10, Term = 2, Time = "Monday,8:00" });
+            Courses.Add(new Occultism() { Name = "Occultism2", Capacity = 10, Term = 2, Time = "Thursday,10:00" });
+            Courses.Add(new Occultism() { Name = "Occultism2", Capacity = 10, Term = 2, Time = "Monday,8:00" });
+            Courses.Add(new Occultism() { Name = "Occultism3", Capacity = 10, Term = 3, Time = "Wednesday,12:00" });
+            Courses.Add(new Occultism() { Name = "Occultism3", Capacity = 10, Term = 3, Time = "Thursday,10:00" });
+            Courses.Add(new Occultism() { Name = "Occultism4", Capacity = 10, Term = 4, Time = "Thursday,8:00" });
+
+
         }
+       
         public void DormFix()
         {
             for (int i = 0; i < 60; i++)

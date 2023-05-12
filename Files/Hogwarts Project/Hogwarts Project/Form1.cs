@@ -98,6 +98,7 @@ namespace Hogwarts_Project
                     MessageBox.Show("Welcome Teacher!");
                     this.Hide();
                     var form3 = new Form3();
+                    form3.Label1Text(textBox1.Text);
                     form3.ShowDialog();
                     this.Show();
                 }

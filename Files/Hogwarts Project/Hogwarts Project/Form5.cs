@@ -14,6 +14,8 @@ namespace Hogwarts_Project
     {
         Dumbeldore admin = Dumbeldore.Instance;
         Globals globals = Globals.Instance;
+        int Check1 = 0;
+        int Check2 = 0;
         int IndexFinder()
         {
             //globals.StudentSort();
@@ -57,7 +59,7 @@ namespace Hogwarts_Project
             int Index = IndexFinder();
             label3.Text = $"Welcome {globals.Student[Index].FirstName} {globals.Student[Index].LastName}";
             label6.Text = $"Term: {globals.Student[Index].Term.ToString()}";
-
+            comboBox1.DataSource = globals.Courses;
         }
 
 
@@ -78,28 +80,45 @@ namespace Hogwarts_Project
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            try
+            {
+                if (Check1==1)
+                {
+                    Exception exception = new Exception();
+                    throw exception;
+                }
+                else
+                {
+                    int Index = IndexFinder();
+                    Random random = new Random();
+                    int RandomNumber = random.Next(3);
+                    if (RandomNumber == 0)
+                    {
+                        globals.Student[Index].Group = GroupType.Gryffindor;
+                    }
+                    else if (RandomNumber == 1)
+                    {
+                        globals.Student[Index].Group = GroupType.Hufflepuff;
+                    }
+                    else if (RandomNumber == 2)
+                    {
+                        globals.Student[Index].Group = GroupType.Ravenclaw;
+                    }
+                    else if (RandomNumber == 3)
+                    {
+                        globals.Student[Index].Group = GroupType.Slytherin;
+                    }
+                    label4.Text = $"Group:{globals.Student[Index].Group.ToString()}";
+                    Check1 = 1;
+                }
 
-            int Index = IndexFinder();
-            Random random = new Random();
-            int RandomNumber = random.Next(3);
-            if (RandomNumber == 0)
-            {
-                globals.Student[Index].Group = GroupType.Gryffindor;
             }
-            else if (RandomNumber == 1)
+            catch (Exception)
             {
-                globals.Student[Index].Group = GroupType.Hufflepuff;
-            }
-            else if (RandomNumber == 2)
-            {
-                globals.Student[Index].Group = GroupType.Ravenclaw;
-            }
-            else if (RandomNumber == 3)
-            {
-                globals.Student[Index].Group = GroupType.Slytherin;
-            }
-            label4.Text = $"Group:{globals.Student[Index].Group.ToString()}";
 
+                
+            }
+            
 
         }
 
@@ -112,114 +131,124 @@ namespace Hogwarts_Project
         {
             try
             {
-                int Index = IndexFinder();
-                if (globals.Student[Index].Group == GroupType.Gryffindor)
+                if (checkBox1.Checked==false || Check2==1)
                 {
+                    Exception exception = new Exception();
+                    throw  exception;
+                }
+                else
+                {
+                    int Index = IndexFinder();
+                    if (globals.Student[Index].Group == GroupType.Gryffindor)
+                    {
 
-                    globals.GryffindorDorm[DormIndex].Floor = GDormFloor;
-                    globals.GryffindorDorm[DormIndex].RoomNumber = GDormRoomNumber;
-                    globals.GryffindorDorm[DormIndex].BedNumber = GDormBedNumber;
-                    globals.GryffindorDorm[DormIndex].Username = globals.Student[Index].Username;
-                    globals.Student[Index].DormitoryNumber = 100 * GDormFloor + 10 * GDormRoomNumber + GDormBedNumber;
-                    label5.Text = $"Dorm Code:{globals.Student[Index].DormitoryNumber}";
-                    if (GDormBedNumber < Dormitory.BedsPerRoom)
-                    {
-                        ++GDormBedNumber;
-                    }
-                    else
-                    {
-                        GDormBedNumber = 1;
-                        if (GDormRoomNumber < Dormitory.RoomsPerFloor)
+                        globals.GryffindorDorm[DormIndex].Floor = GDormFloor;
+                        globals.GryffindorDorm[DormIndex].RoomNumber = GDormRoomNumber;
+                        globals.GryffindorDorm[DormIndex].BedNumber = GDormBedNumber;
+                        globals.GryffindorDorm[DormIndex].Username = globals.Student[Index].Username;
+                        globals.Student[Index].DormitoryNumber = 100 * GDormFloor + 10 * GDormRoomNumber + GDormBedNumber;
+                        label5.Text = $"Dorm Code:{globals.Student[Index].DormitoryNumber}";
+                        if (GDormBedNumber < Dormitory.BedsPerRoom)
                         {
-                            ++GDormRoomNumber;
+                            ++GDormBedNumber;
                         }
                         else
                         {
-                            GDormRoomNumber = 1;
-                            ++GDormFloor;
+                            GDormBedNumber = 1;
+                            if (GDormRoomNumber < Dormitory.RoomsPerFloor)
+                            {
+                                ++GDormRoomNumber;
+                            }
+                            else
+                            {
+                                GDormRoomNumber = 1;
+                                ++GDormFloor;
+                            }
                         }
                     }
-                }
-                else if (globals.Student[Index].Group == GroupType.Hufflepuff)
-                {
-                    globals.HufflepuffDorm[DormIndex].Floor = HDormFloor;
-                    globals.HufflepuffDorm[DormIndex].RoomNumber = HDormRoomNumber;
-                    globals.HufflepuffDorm[DormIndex].BedNumber = HDormBedNumber;
-                    globals.HufflepuffDorm[DormIndex].Username = globals.Student[Index].Username;
-                    globals.Student[Index].DormitoryNumber = 100 * HDormFloor + 10 * HDormRoomNumber + HDormBedNumber;
-                    label5.Text = $"Dorm Code:{globals.Student[Index].DormitoryNumber}";
-                    if (HDormBedNumber < Dormitory.BedsPerRoom)
+                    else if (globals.Student[Index].Group == GroupType.Hufflepuff)
                     {
-                        ++HDormBedNumber;
-                    }
-                    else
-                    {
-                        HDormBedNumber = 1;
-                        if (HDormRoomNumber < Dormitory.RoomsPerFloor)
+                        globals.HufflepuffDorm[DormIndex].Floor = HDormFloor;
+                        globals.HufflepuffDorm[DormIndex].RoomNumber = HDormRoomNumber;
+                        globals.HufflepuffDorm[DormIndex].BedNumber = HDormBedNumber;
+                        globals.HufflepuffDorm[DormIndex].Username = globals.Student[Index].Username;
+                        globals.Student[Index].DormitoryNumber = 100 * HDormFloor + 10 * HDormRoomNumber + HDormBedNumber;
+                        label5.Text = $"Dorm Code:{globals.Student[Index].DormitoryNumber}";
+                        if (HDormBedNumber < Dormitory.BedsPerRoom)
                         {
-                            ++HDormRoomNumber;
+                            ++HDormBedNumber;
                         }
                         else
                         {
-                            HDormRoomNumber = 1;
-                            ++HDormFloor;
+                            HDormBedNumber = 1;
+                            if (HDormRoomNumber < Dormitory.RoomsPerFloor)
+                            {
+                                ++HDormRoomNumber;
+                            }
+                            else
+                            {
+                                HDormRoomNumber = 1;
+                                ++HDormFloor;
+                            }
                         }
                     }
-                }
-                else if (globals.Student[Index].Group == GroupType.Ravenclaw)
-                {
-                    globals.RavenclawDorm[DormIndex].Floor = RDormFloor;
-                    globals.RavenclawDorm[DormIndex].RoomNumber = RDormRoomNumber;
-                    globals.RavenclawDorm[DormIndex].BedNumber = RDormBedNumber;
-                    globals.RavenclawDorm[DormIndex].Username = globals.Student[Index].Username;
-                    globals.Student[Index].DormitoryNumber = 100 * RDormFloor + 10 * RDormRoomNumber + RDormBedNumber;
-                    label5.Text = $"Dorm Code:{globals.Student[Index].DormitoryNumber}";
-                    if (RDormBedNumber < Dormitory.BedsPerRoom)
+                    else if (globals.Student[Index].Group == GroupType.Ravenclaw)
                     {
-                        ++RDormBedNumber;
-                    }
-                    else
-                    {
-                        RDormBedNumber = 1;
-                        if (RDormRoomNumber < Dormitory.RoomsPerFloor)
+                        globals.RavenclawDorm[DormIndex].Floor = RDormFloor;
+                        globals.RavenclawDorm[DormIndex].RoomNumber = RDormRoomNumber;
+                        globals.RavenclawDorm[DormIndex].BedNumber = RDormBedNumber;
+                        globals.RavenclawDorm[DormIndex].Username = globals.Student[Index].Username;
+                        globals.Student[Index].DormitoryNumber = 100 * RDormFloor + 10 * RDormRoomNumber + RDormBedNumber;
+                        label5.Text = $"Dorm Code:{globals.Student[Index].DormitoryNumber}";
+                        if (RDormBedNumber < Dormitory.BedsPerRoom)
                         {
-                            ++RDormRoomNumber;
+                            ++RDormBedNumber;
                         }
                         else
                         {
-                            RDormRoomNumber = 1;
-                            ++RDormFloor;
+                            RDormBedNumber = 1;
+                            if (RDormRoomNumber < Dormitory.RoomsPerFloor)
+                            {
+                                ++RDormRoomNumber;
+                            }
+                            else
+                            {
+                                RDormRoomNumber = 1;
+                                ++RDormFloor;
+                            }
                         }
-                    }
 
-                }
-                else if (globals.Student[Index].Group == GroupType.Slytherin)
-                {
-                    globals.SlytherinDorm[DormIndex].Floor = SDormFloor;
-                    globals.SlytherinDorm[DormIndex].RoomNumber = SDormRoomNumber;
-                    globals.SlytherinDorm[DormIndex].BedNumber = SDormBedNumber;
-                    globals.SlytherinDorm[DormIndex].Username = globals.Student[Index].Username;
-                    globals.Student[Index].DormitoryNumber = 100 * SDormFloor + 10 * SDormRoomNumber + SDormBedNumber;
-                    label5.Text = $"Dorm Code:{globals.Student[Index].DormitoryNumber}";
-                    if (SDormBedNumber < Dormitory.BedsPerRoom)
-                    {
-                        ++SDormBedNumber;
                     }
-                    else
+                    else if (globals.Student[Index].Group == GroupType.Slytherin)
                     {
-                        SDormBedNumber = 1;
-                        if (SDormRoomNumber < Dormitory.RoomsPerFloor)
+                        globals.SlytherinDorm[DormIndex].Floor = SDormFloor;
+                        globals.SlytherinDorm[DormIndex].RoomNumber = SDormRoomNumber;
+                        globals.SlytherinDorm[DormIndex].BedNumber = SDormBedNumber;
+                        globals.SlytherinDorm[DormIndex].Username = globals.Student[Index].Username;
+                        globals.Student[Index].DormitoryNumber = 100 * SDormFloor + 10 * SDormRoomNumber + SDormBedNumber;
+                        label5.Text = $"Dorm Code:{globals.Student[Index].DormitoryNumber}";
+                        if (SDormBedNumber < Dormitory.BedsPerRoom)
                         {
-                            ++SDormRoomNumber;
+                            ++SDormBedNumber;
                         }
                         else
                         {
-                            SDormRoomNumber = 1;
-                            ++SDormFloor;
+                            SDormBedNumber = 1;
+                            if (SDormRoomNumber < Dormitory.RoomsPerFloor)
+                            {
+                                ++SDormRoomNumber;
+                            }
+                            else
+                            {
+                                SDormRoomNumber = 1;
+                                ++SDormFloor;
+                            }
                         }
-                    }
 
+                    }
+                    Check2 = 1;
                 }
+                
             }
             catch (Exception)
             {
@@ -249,6 +278,11 @@ namespace Hogwarts_Project
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

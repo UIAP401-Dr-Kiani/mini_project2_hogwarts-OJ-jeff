@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Hogwarts_Project
 {
-    internal class Plants
+    public class Plants
     {
+        public string Name { get; set; }
+        public string Number { get; set; }
     }
 }
