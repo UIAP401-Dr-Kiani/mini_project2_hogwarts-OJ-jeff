@@ -36,12 +36,15 @@
             label4 = new Label();
             listBox1 = new ListBox();
             button2 = new Button();
+            checkBox1 = new CheckBox();
+            button3 = new Button();
+            button4 = new Button();
             SuspendLayout();
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(104, 55);
+            comboBox1.Location = new Point(104, 68);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(558, 28);
             comboBox1.TabIndex = 0;
@@ -69,7 +72,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 59);
+            label3.Location = new Point(12, 71);
             label3.Name = "label3";
             label3.Size = new Size(86, 20);
             label3.TabIndex = 3;
@@ -77,7 +80,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(694, 55);
+            button1.Location = new Point(694, 67);
             button1.Name = "button1";
             button1.Size = new Size(94, 28);
             button1.TabIndex = 4;
@@ -113,11 +116,45 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(12, 38);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(202, 24);
+            checkBox1.TabIndex = 8;
+            checkBox1.Text = "Can Teach Simultaneously";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(12, 222);
+            button3.Name = "button3";
+            button3.Size = new Size(256, 29);
+            button3.TabIndex = 9;
+            button3.Text = "Set homework for botanical courses";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(532, 222);
+            button4.Name = "button4";
+            button4.Size = new Size(256, 29);
+            button4.TabIndex = 10;
+            button4.Text = "Set homework for chemistry courses";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(858, 450);
+            ClientSize = new Size(908, 450);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(checkBox1);
             Controls.Add(button2);
             Controls.Add(listBox1);
             Controls.Add(label4);
@@ -143,5 +180,8 @@
         private Label label4;
         private ListBox listBox1;
         private Button button2;
+        private CheckBox checkBox1;
+        private Button button3;
+        private Button button4;
     }
 }

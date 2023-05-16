@@ -54,7 +54,7 @@ namespace Hogwarts_Project
                 {
                     return 2;
                 }
-                else if (textBox1.Text == "ADMIN" && textBox2.Text == "ADMIN")
+                else if (textBox1.Text == "a" && textBox2.Text == "a")
                 {
                     return 3;
                 }

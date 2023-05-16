@@ -19,6 +19,8 @@ namespace Hogwarts_Project
         public string Time { get; set; }
         public string Teacher { get; set; }
         public string Info { get; set; }
+        public double Grade { get; set; }
+        public static bool HasHomework { get; set; }   
         public override string ToString() 
         {
             return $"Name : {this.Name} , Term : {this.Term} , Capacity : {this.Capacity} , Time : {this.Time} , Teacher : {this.Teacher}";

@@ -35,13 +35,13 @@
             checkBox1 = new CheckBox();
             checkBox2 = new CheckBox();
             checkBox3 = new CheckBox();
-            checkBox4 = new CheckBox();
             label5 = new Label();
             comboBox1 = new ComboBox();
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
             button1 = new Button();
+            listBox1 = new ListBox();
             SuspendLayout();
             // 
             // label1
@@ -111,20 +111,11 @@
             checkBox3.AutoSize = true;
             checkBox3.Location = new Point(8, 113);
             checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(101, 24);
+            checkBox3.Size = new Size(154, 24);
             checkBox3.TabIndex = 8;
-            checkBox3.Text = "checkBox3";
+            checkBox3.Text = "Start unit selection";
             checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(8, 207);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(101, 24);
-            checkBox4.TabIndex = 9;
-            checkBox4.Text = "checkBox4";
-            checkBox4.UseVisualStyleBackColor = true;
+            checkBox3.CheckedChanged += checkBox3_CheckedChanged;
             // 
             // label5
             // 
@@ -163,6 +154,7 @@
             label7.Size = new Size(86, 20);
             label7.TabIndex = 14;
             label7.Text = "Select Units";
+            label7.Click += label7_Click;
             // 
             // label8
             // 
@@ -181,19 +173,30 @@
             button1.TabIndex = 16;
             button1.Text = "Submit";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 20;
+            listBox1.Location = new Point(8, 197);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(771, 104);
+            listBox1.TabIndex = 17;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(880, 450);
+            ClientSize = new Size(892, 450);
+            Controls.Add(listBox1);
             Controls.Add(button1);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(comboBox1);
             Controls.Add(label5);
-            Controls.Add(checkBox4);
             Controls.Add(checkBox3);
             Controls.Add(checkBox2);
             Controls.Add(checkBox1);
@@ -216,12 +219,12 @@
         private CheckBox checkBox1;
         private CheckBox checkBox2;
         private CheckBox checkBox3;
-        private CheckBox checkBox4;
         private Label label5;
         private ComboBox comboBox1;
         private Label label6;
         private Label label7;
         private Label label8;
         private Button button1;
+        private ListBox listBox1;
     }
 }

@@ -14,6 +14,7 @@ namespace Hogwarts_Project
     {
         Globals globals = Globals.Instance;
         int Check = 1;
+        string TimeCheck = null;
         public Form3()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace Hogwarts_Project
         public void Label1Text(string Username)
         {
             label1.Text = Username;
-            comboBox1.DataSource = globals.Courses;
+
         }
 
         int IndexFinder()
@@ -40,7 +41,10 @@ namespace Hogwarts_Project
 
         private void Form3_Load(object sender, EventArgs e)
         {
+
             int Index = IndexFinder();
+            comboBox1.DataSource = globals.Courses;
+            globals.Teachers[Index].CurrentCourses = new List<Courses>();
             comboBox1.Text = null;
             label2.Text = $"Welcome {globals.Teachers[Index].FirstName} {globals.Teachers[Index].LastName}";
         }
@@ -66,24 +70,47 @@ namespace Hogwarts_Project
             {
                 if (Check == 5)
                 {
-                    button1.Hide();
+
                     Exception exception = new Exception();
                     throw exception;
                 }
                 int Index = IndexFinder();
-                if (globals.Courses[comboBox1.SelectedIndex].Teacher == null)
+                if (globals.Teachers[Index].CanTeachSimultaneously)
                 {
-                    globals.Courses[comboBox1.SelectedIndex].Teacher = $"{globals.Teachers[Index].FirstName} {globals.Teachers[Index].LastName}";
-                    listBox1.Items.Add(globals.Courses[comboBox1.SelectedIndex].ToString());
-                    comboBox1.Text = null;
-                    ++Check;
+                    if (globals.Courses[comboBox1.SelectedIndex].Teacher == null)
+                    {
+                        globals.Courses[comboBox1.SelectedIndex].Teacher = $"{globals.Teachers[Index].FirstName} {globals.Teachers[Index].LastName}";
+                        listBox1.Items.Add(globals.Courses[comboBox1.SelectedIndex].ToString());
+                        globals.Teachers[Index].CurrentCourses.Add(globals.Courses[comboBox1.SelectedIndex]);
+                        comboBox1.Text = null;
+                        ++Check;
 
+                    }
+                    else
+                    {
+                        Exception exception = new Exception();
+                        throw exception;
+                    }
                 }
                 else
                 {
-                    Exception exception = new Exception();
-                    throw exception;
+                    if (globals.Courses[comboBox1.SelectedIndex].Teacher == null && globals.Courses[comboBox1.SelectedIndex].Time != TimeCheck)
+                    {
+                        globals.Courses[comboBox1.SelectedIndex].Teacher = $"{globals.Teachers[Index].FirstName} {globals.Teachers[Index].LastName}";
+                        listBox1.Items.Add(globals.Courses[comboBox1.SelectedIndex].ToString());
+                        globals.Teachers[Index].CurrentCourses.Add(globals.Courses[comboBox1.SelectedIndex]);
+                        TimeCheck = globals.Courses[comboBox1.SelectedIndex].Time;
+                        comboBox1.Text = null;
+                        ++Check;
+
+                    }
+                    else
+                    {
+                        Exception exception = new Exception();
+                        throw exception;
+                    }
                 }
+
 
 
 
@@ -101,6 +128,38 @@ namespace Hogwarts_Project
         private void button2_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+            int Index = IndexFinder();
+            globals.Teachers[Index].CanTeachSimultaneously = true;
+            checkBox1.AutoCheck = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int Index = IndexFinder();
+            for (int i = 0; i < listBox1.Items.Count; i++)
+            {
+                if (globals.Teachers[Index].CurrentCourses[i].Name == "Botanical1" || globals.Teachers[Index].CurrentCourses[i].Name == "Botanical2" || globals.Teachers[Index].CurrentCourses[i].Name == "Botanical3" || globals.Teachers[Index].CurrentCourses[i].Name == "Botanical4")
+                {
+                    Courses.HasHomework = true;
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int Index = IndexFinder();
+            for (int i = 0; i < listBox1.Items.Count; i++)
+            {
+                if (globals.Teachers[Index].CurrentCourses[i].Name == "Chemistry1" || globals.Teachers[Index].CurrentCourses[i].Name == "Chemistry2" || globals.Teachers[Index].CurrentCourses[i].Name == "Botanical3" || globals.Teachers[Index].CurrentCourses[i].Name == "Botanical4")
+                {
+                    Courses.HasHomework = true;
+                }
+            }
         }
     }
 }

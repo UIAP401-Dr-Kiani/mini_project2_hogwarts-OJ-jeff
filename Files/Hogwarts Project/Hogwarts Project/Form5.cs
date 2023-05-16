@@ -14,8 +14,13 @@ namespace Hogwarts_Project
     {
         Dumbeldore admin = Dumbeldore.Instance;
         Globals globals = Globals.Instance;
+        int Check = 1;
         int Check1 = 0;
         int Check2 = 0;
+        string TimeCheck = "";
+        string InfoCheck = "";
+
+
         int IndexFinder()
         {
             //globals.StudentSort();
@@ -57,9 +62,12 @@ namespace Hogwarts_Project
         private void Form5_Load(object sender, EventArgs e)
         {
             int Index = IndexFinder();
+            globals.Student[Index].CurrentCourses=new List<Courses>();
             label3.Text = $"Welcome {globals.Student[Index].FirstName} {globals.Student[Index].LastName}";
             label6.Text = $"Term: {globals.Student[Index].Term.ToString()}";
             comboBox1.DataSource = globals.Courses;
+            comboBox1.Hide();
+            button1.Hide();
         }
 
 
@@ -82,7 +90,7 @@ namespace Hogwarts_Project
         {
             try
             {
-                if (Check1==1)
+                if (Check1 == 1)
                 {
                     Exception exception = new Exception();
                     throw exception;
@@ -108,7 +116,7 @@ namespace Hogwarts_Project
                     {
                         globals.Student[Index].Group = GroupType.Slytherin;
                     }
-                    label4.Text = $"Group:{globals.Student[Index].Group.ToString()}";
+                    label4.Text = $"Group:{globals.Student[Index].Group}";
                     Check1 = 1;
                 }
 
@@ -116,9 +124,9 @@ namespace Hogwarts_Project
             catch (Exception)
             {
 
-                
+
             }
-            
+
 
         }
 
@@ -131,10 +139,10 @@ namespace Hogwarts_Project
         {
             try
             {
-                if (checkBox1.Checked==false || Check2==1)
+                if (checkBox1.Checked == false || Check2 == 1)
                 {
                     Exception exception = new Exception();
-                    throw  exception;
+                    throw exception;
                 }
                 else
                 {
@@ -248,7 +256,7 @@ namespace Hogwarts_Project
                     }
                     Check2 = 1;
                 }
-                
+
             }
             catch (Exception)
             {
@@ -262,10 +270,7 @@ namespace Hogwarts_Project
 
         }
 
-        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
 
-        }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
@@ -283,6 +288,62 @@ namespace Hogwarts_Project
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            comboBox1.Show();
+            button1.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (Check == 5)
+                {
+                    button1.Hide();
+                    Exception exception = new Exception();
+                    throw exception;
+                }
+                int Index = IndexFinder();
+                if (globals.Courses[comboBox1.SelectedIndex].Teacher != null && globals.Courses[comboBox1.SelectedIndex].Term <= globals.Student[Index].Term && globals.Courses[comboBox1.SelectedIndex].Time!=TimeCheck && globals.Courses[comboBox1.SelectedIndex].Info!=InfoCheck)
+                {
+                    listBox1.Items.Add(globals.Courses[comboBox1.SelectedIndex].ToString());
+                    globals.Student[Index].CurrentCourses.Add(globals.Courses[comboBox1.SelectedIndex]);
+                    TimeCheck = globals.Courses[comboBox1.SelectedIndex].Time;
+                    InfoCheck = globals.Courses[comboBox1.SelectedIndex].Info;
+                    comboBox1.Text = null;
+                    ++Check;
+
+
+                }
+                else
+                {
+                    Exception exception = new Exception();
+                    throw exception;
+                }
+
+
+
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erorr!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

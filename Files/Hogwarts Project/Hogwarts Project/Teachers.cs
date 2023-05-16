@@ -9,5 +9,6 @@ namespace Hogwarts_Project
     public class Teachers:People
     {
         public bool CanTeachSimultaneously { get; set; }
+        public List<Courses> CurrentCourses { get; set; }
     }
 }
