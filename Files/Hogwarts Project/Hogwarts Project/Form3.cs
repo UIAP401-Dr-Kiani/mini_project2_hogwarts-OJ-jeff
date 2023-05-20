@@ -47,6 +47,9 @@ namespace Hogwarts_Project
             globals.Teachers[Index].CurrentCourses = new List<Courses>();
             comboBox1.Text = null;
             label2.Text = $"Welcome {globals.Teachers[Index].FirstName} {globals.Teachers[Index].LastName}";
+            dateTimePicker1.Hide();
+            dateTimePicker2.Hide();
+            button5.Hide();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -140,26 +143,87 @@ namespace Hogwarts_Project
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int Index = IndexFinder();
-            for (int i = 0; i < listBox1.Items.Count; i++)
+            try
             {
-                if (globals.Teachers[Index].CurrentCourses[i].Name == "Botanical1" || globals.Teachers[Index].CurrentCourses[i].Name == "Botanical2" || globals.Teachers[Index].CurrentCourses[i].Name == "Botanical3" || globals.Teachers[Index].CurrentCourses[i].Name == "Botanical4")
+                int Index = IndexFinder();
+                for (int i = 0; i < listBox1.Items.Count; i++)
                 {
-                    Courses.HasHomework = true;
+                    if (globals.Teachers[Index].CurrentCourses[i].Name == "Botanical1" || globals.Teachers[Index].CurrentCourses[i].Name == "Botanical2" || globals.Teachers[Index].CurrentCourses[i].Name == "Botanical3" || globals.Teachers[Index].CurrentCourses[i].Name == "Botanical4")
+                    {
+                        Courses.HasBHomework = true;
+                        dateTimePicker1.Show();
+                        dateTimePicker2.Show();
+                        button5.Show();
+
+                    }
+                }
+                Courses.BHomeworkStartTime = dateTimePicker2.Value;
+                Courses.BHomeworkFinishTime = dateTimePicker1.Value;
+                if (Courses.BHomeworkStartTime > Courses.BHomeworkFinishTime)
+                {
+                    Courses.BHomeworkStartTime = DateTime.MinValue;
+                    Courses.BHomeworkFinishTime = DateTime.MinValue;
+                    Exception exception = new Exception();
+                    throw exception;
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Erorr!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int Index = IndexFinder();
-            for (int i = 0; i < listBox1.Items.Count; i++)
+
+            try
             {
-                if (globals.Teachers[Index].CurrentCourses[i].Name == "Chemistry1" || globals.Teachers[Index].CurrentCourses[i].Name == "Chemistry2" || globals.Teachers[Index].CurrentCourses[i].Name == "Botanical3" || globals.Teachers[Index].CurrentCourses[i].Name == "Botanical4")
+                int Index = IndexFinder();
+                for (int i = 0; i < listBox1.Items.Count; i++)
                 {
-                    Courses.HasHomework = true;
+                    if (globals.Teachers[Index].CurrentCourses[i].Name == "Chemistry1" || globals.Teachers[Index].CurrentCourses[i].Name == "Chemistry2" || globals.Teachers[Index].CurrentCourses[i].Name == "Chemistry3" || globals.Teachers[Index].CurrentCourses[i].Name == "Chemistry4")
+                    {
+                        Courses.HasCHomework = true;
+                        dateTimePicker1.Show();
+                        dateTimePicker2.Show();
+                        button5.Show();
+                    }
+                }
+                Courses.CHomeworkStartTime = dateTimePicker2.Value;
+                Courses.CHomeworkFinishTime = dateTimePicker1.Value;
+                if (Courses.CHomeworkStartTime > Courses.CHomeworkFinishTime)
+                {
+                    Courses.CHomeworkStartTime = DateTime.MinValue;
+                    Courses.CHomeworkFinishTime = DateTime.MinValue;
+                    Exception exception = new Exception();
+                    throw exception;
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Erorr!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("DONE!");
         }
     }
 }

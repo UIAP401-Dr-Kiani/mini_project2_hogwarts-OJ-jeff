@@ -39,6 +39,11 @@
             checkBox1 = new CheckBox();
             button3 = new Button();
             button4 = new Button();
+            dateTimePicker1 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
+            label5 = new Label();
+            label6 = new Label();
+            button5 = new Button();
             SuspendLayout();
             // 
             // comboBox1
@@ -139,19 +144,69 @@
             // 
             // button4
             // 
-            button4.Location = new Point(532, 222);
+            button4.Location = new Point(527, 222);
             button4.Name = "button4";
-            button4.Size = new Size(256, 29);
+            button4.Size = new Size(261, 29);
             button4.TabIndex = 10;
             button4.Text = "Set homework for chemistry courses";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(264, 329);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(265, 27);
+            dateTimePicker1.TabIndex = 11;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Location = new Point(264, 283);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(265, 27);
+            dateTimePicker2.TabIndex = 12;
+            dateTimePicker2.ValueChanged += dateTimePicker2_ValueChanged;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(184, 283);
+            label5.Name = "label5";
+            label5.Size = new Size(74, 20);
+            label5.TabIndex = 13;
+            label5.Text = "Start time";
+            label5.Click += label5_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(178, 329);
+            label6.Name = "label6";
+            label6.Size = new Size(80, 20);
+            label6.TabIndex = 14;
+            label6.Text = "Finish time";
+            // 
+            // button5
+            // 
+            button5.Location = new Point(344, 373);
+            button5.Name = "button5";
+            button5.Size = new Size(94, 29);
+            button5.TabIndex = 15;
+            button5.Text = "Submit";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(908, 450);
+            ClientSize = new Size(851, 450);
+            Controls.Add(button5);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(dateTimePicker2);
+            Controls.Add(dateTimePicker1);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(checkBox1);
@@ -183,5 +238,10 @@
         private CheckBox checkBox1;
         private Button button3;
         private Button button4;
+        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker2;
+        private Label label5;
+        private Label label6;
+        private Button button5;
     }
 }

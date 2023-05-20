@@ -19,7 +19,7 @@ namespace Hogwarts_Project
         int Check2 = 0;
         string TimeCheck = "";
         string InfoCheck = "";
-
+        //Form7 form7 = new Form7();
 
         int IndexFinder()
         {
@@ -62,12 +62,13 @@ namespace Hogwarts_Project
         private void Form5_Load(object sender, EventArgs e)
         {
             int Index = IndexFinder();
-            globals.Student[Index].CurrentCourses=new List<Courses>();
+            globals.Student[Index].CurrentCourses = new List<Courses>();
             label3.Text = $"Welcome {globals.Student[Index].FirstName} {globals.Student[Index].LastName}";
             label6.Text = $"Term: {globals.Student[Index].Term.ToString()}";
             comboBox1.DataSource = globals.Courses;
             comboBox1.Hide();
             button1.Hide();
+
         }
 
 
@@ -310,7 +311,7 @@ namespace Hogwarts_Project
                     throw exception;
                 }
                 int Index = IndexFinder();
-                if (globals.Courses[comboBox1.SelectedIndex].Teacher != null && globals.Courses[comboBox1.SelectedIndex].Term <= globals.Student[Index].Term && globals.Courses[comboBox1.SelectedIndex].Time!=TimeCheck && globals.Courses[comboBox1.SelectedIndex].Info!=InfoCheck)
+                if (globals.Courses[comboBox1.SelectedIndex].Teacher != null && globals.Courses[comboBox1.SelectedIndex].Term <= globals.Student[Index].Term && globals.Courses[comboBox1.SelectedIndex].Time != TimeCheck && globals.Courses[comboBox1.SelectedIndex].Info != InfoCheck)
                 {
                     listBox1.Items.Add(globals.Courses[comboBox1.SelectedIndex].ToString());
                     globals.Student[Index].CurrentCourses.Add(globals.Courses[comboBox1.SelectedIndex]);
@@ -346,6 +347,36 @@ namespace Hogwarts_Project
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form6 form6 = new Form6();
+
+            if (Courses.HasBHomework)
+            {
+                int Index = IndexFinder();
+                form6.LabelText(Index);
+                form6.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("There is no homework!");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (Courses.HasCHomework)
+            {
+                //form6.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("There is no homework!");
+            }
         }
     }
 }

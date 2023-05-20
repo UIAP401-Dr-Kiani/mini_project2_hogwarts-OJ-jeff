@@ -42,6 +42,8 @@
             label8 = new Label();
             button1 = new Button();
             listBox1 = new ListBox();
+            button2 = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -185,11 +187,33 @@
             listBox1.TabIndex = 17;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
+            // button2
+            // 
+            button2.Location = new Point(785, 197);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 49);
+            button2.TabIndex = 18;
+            button2.Text = "Botanical\r\nHomework";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(786, 252);
+            button3.Name = "button3";
+            button3.Size = new Size(94, 49);
+            button3.TabIndex = 19;
+            button3.Text = "Chemistry\r\nHomework";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(892, 450);
+            Controls.Add(button3);
+            Controls.Add(button2);
             Controls.Add(listBox1);
             Controls.Add(button1);
             Controls.Add(label8);
@@ -226,5 +250,7 @@
         private Label label8;
         private Button button1;
         private ListBox listBox1;
+        private Button button2;
+        private Button button3;
     }
 }

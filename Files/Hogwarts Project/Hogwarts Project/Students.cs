@@ -13,6 +13,9 @@ namespace Hogwarts_Project
         public int Term { get; set; }
         public int DormitoryNumber { get; set; }
         public bool IsInHogwarts { get; set; }
+        public bool HasDoneBHomework { get; set; }
+        public bool HasDoneCHomework { get;set; }
+
         
     }
 }
