@@ -16,6 +16,7 @@ namespace Hogwarts_Project
             TeacherSort(); 
             DormFix();
             Courses = new List<Courses>();
+            ChemHomeworkReport = new List<string>();
             SetCourses();
         }
         private static Globals instance = null;
@@ -30,6 +31,7 @@ namespace Hogwarts_Project
         public Dormitory[] RavenclawDorm = new Dormitory[60];
         public Dormitory[] SlytherinDorm = new Dormitory[60];
         public List<Courses> Courses { get; set; }
+        public List<string> ChemHomeworkReport { get; set; }
         public void SetCourses()
         {
             

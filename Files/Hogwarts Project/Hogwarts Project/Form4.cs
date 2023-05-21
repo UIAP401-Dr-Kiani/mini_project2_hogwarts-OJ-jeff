@@ -13,6 +13,7 @@ namespace Hogwarts_Project
     public partial class Form4 : Form
     {
         Dumbeldore admin = Dumbeldore.Instance;
+        Globals globals = Globals.Instance;
         public Form4()
         {
             InitializeComponent();
@@ -71,6 +72,42 @@ namespace Hogwarts_Project
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            foreach (Plants plant in Botanical.FirstTermPlants)
+            {
+                plant.Number = 10;
+            }
+            foreach (Plants plant in Botanical.SecondTermPlants)
+            {
+                plant.Number = 10;
+            }
+            foreach (Plants plant in Botanical.ThirdTermPlants)
+            {
+                plant.Number = 10;
+            }
+            foreach (Plants plant in Botanical.FourthTermsPlants)
+            {
+                plant.Number = 10;
+            }
+            MessageBox.Show("Done!");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            foreach (var student in globals.Student)
+            {
+                if (student.WantToLeave)
+                {
+                    DialogResult result = MessageBox.Show($"Student {student.FirstName} {student.LastName}({student.Username} wants to leave the hogwarts.", "Confirmation", MessageBoxButtons.OKCancel);
+                    if (result == DialogResult.OK)
+                    {
+                        student.IsInHogwarts = false; student.WantToLeave = false;
+                    }
+                }
+            }
         }
     }
 }

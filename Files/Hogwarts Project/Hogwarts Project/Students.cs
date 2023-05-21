@@ -8,6 +8,10 @@ namespace Hogwarts_Project
 {
     public class Students:People
     {
+        public Students() 
+        {
+            grade = 0;
+        }
         public List<Courses> CurrentCourses { get; set; }
         public List<Courses> PassedCourses { get; set; }
         public int Term { get; set; }
@@ -15,6 +19,7 @@ namespace Hogwarts_Project
         public bool IsInHogwarts { get; set; }
         public bool HasDoneBHomework { get; set; }
         public bool HasDoneCHomework { get;set; }
+        public double grade { get; set; }
 
         
     }

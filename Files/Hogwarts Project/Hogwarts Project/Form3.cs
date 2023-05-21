@@ -49,6 +49,9 @@ namespace Hogwarts_Project
             label2.Text = $"Welcome {globals.Teachers[Index].FirstName} {globals.Teachers[Index].LastName}";
             dateTimePicker1.Hide();
             dateTimePicker2.Hide();
+            dateTimePicker3.Hide();
+            dateTimePicker4.Hide();
+            button6.Hide();
             button5.Hide();
         }
 
@@ -190,15 +193,7 @@ namespace Hogwarts_Project
                         button5.Show();
                     }
                 }
-                Courses.CHomeworkStartTime = dateTimePicker2.Value;
-                Courses.CHomeworkFinishTime = dateTimePicker1.Value;
-                if (Courses.CHomeworkStartTime > Courses.CHomeworkFinishTime)
-                {
-                    Courses.CHomeworkStartTime = DateTime.MinValue;
-                    Courses.CHomeworkFinishTime = DateTime.MinValue;
-                    Exception exception = new Exception();
-                    throw exception;
-                }
+
             }
             catch (Exception)
             {
@@ -223,7 +218,58 @@ namespace Hogwarts_Project
 
         private void button5_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("DONE!");
+            try
+            {
+                Courses.BHomeworkStartTime = dateTimePicker2.Value;
+                Courses.BHomeworkFinishTime = dateTimePicker1.Value;
+                if (Courses.BHomeworkStartTime > Courses.BHomeworkFinishTime)
+                {
+                    Courses.BHomeworkStartTime = DateTime.MinValue;
+                    Courses.BHomeworkFinishTime = DateTime.MinValue;
+                    Exception exception = new Exception();
+                    throw exception;
+                }
+                MessageBox.Show("DONE!");
+                dateTimePicker1.Hide();
+                dateTimePicker2.Hide();
+                button5.Hide();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erorr!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Courses.CHomeworkStartTime = dateTimePicker2.Value;
+                Courses.CHomeworkFinishTime = dateTimePicker1.Value;
+                if (Courses.CHomeworkStartTime > Courses.CHomeworkFinishTime)
+                {
+                    Courses.CHomeworkStartTime = DateTime.MinValue;
+                    Courses.CHomeworkFinishTime = DateTime.MinValue;
+                    Exception exception = new Exception();
+                    throw exception;
+                }
+                MessageBox.Show("DONE!");
+                dateTimePicker3.Hide();
+                dateTimePicker4.Hide();
+                button6.Hide();
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

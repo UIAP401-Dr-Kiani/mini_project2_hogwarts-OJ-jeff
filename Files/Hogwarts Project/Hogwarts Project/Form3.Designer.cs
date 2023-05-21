@@ -44,6 +44,9 @@
             label5 = new Label();
             label6 = new Label();
             button5 = new Button();
+            dateTimePicker3 = new DateTimePicker();
+            dateTimePicker4 = new DateTimePicker();
+            button6 = new Button();
             SuspendLayout();
             // 
             // comboBox1
@@ -197,11 +200,39 @@
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
+            // dateTimePicker3
+            // 
+            dateTimePicker3.Location = new Point(275, 329);
+            dateTimePicker3.Name = "dateTimePicker3";
+            dateTimePicker3.Size = new Size(265, 27);
+            dateTimePicker3.TabIndex = 16;
+            // 
+            // dateTimePicker4
+            // 
+            dateTimePicker4.Location = new Point(275, 283);
+            dateTimePicker4.Name = "dateTimePicker4";
+            dateTimePicker4.Size = new Size(265, 27);
+            dateTimePicker4.TabIndex = 17;
+            dateTimePicker4.ValueChanged += dateTimePicker4_ValueChanged;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(354, 373);
+            button6.Name = "button6";
+            button6.Size = new Size(94, 29);
+            button6.TabIndex = 18;
+            button6.Text = "Submit";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(851, 450);
+            Controls.Add(button6);
+            Controls.Add(dateTimePicker4);
+            Controls.Add(dateTimePicker3);
             Controls.Add(button5);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -243,5 +274,8 @@
         private Label label5;
         private Label label6;
         private Button button5;
+        private DateTimePicker dateTimePicker3;
+        private DateTimePicker dateTimePicker4;
+        private Button button6;
     }
 }

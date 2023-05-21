@@ -78,7 +78,7 @@ namespace Hogwarts_Project
                         this.Hide();
                         var form5 = new Form5();
                         form5.Label1Text(textBox1.Text);
-                        form5.ShowDialog();
+                        form5.Show();
                         this.Show();
                     }
                     else

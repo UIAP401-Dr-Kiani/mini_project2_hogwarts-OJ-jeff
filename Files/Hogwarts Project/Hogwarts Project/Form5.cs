@@ -378,5 +378,10 @@ namespace Hogwarts_Project
                 MessageBox.Show("There is no homework!");
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
